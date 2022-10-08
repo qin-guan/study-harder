@@ -1,3 +1,41 @@
 site_name: Study Harder
+copyright: Copyright &copy; Qin Guan CC BY-NC-SA 4.0
+
+repo_url: https://github.com/qin-guan/study-harder
+repo_name: qin-guan/study-harder
+edit_uri: edit/main/docs/
+
+plugins:
+  - search
+  - social
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+
 theme:
   name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
