@@ -1,20 +1,26 @@
 site_name: Study Harder
 site_url: https://study-harder.pages.dev/
+site_author: Qin Guan
 copyright: Copyright &copy; Qin Guan CC BY-NC-SA 4.0
 
 repo_url: https://github.com/qin-guan/study-harder
 repo_name: qin-guan/study-harder
 edit_uri: edit/main/docs/
 
+markdown_extensions:
+  - pymdownx.arithmatex
+
 plugins:
   - search
+  - awesome-pages
   - social
   - git-revision-date-localized:
       enable_creation_date: true
-
+      enabled: !ENV [ CI, false ]
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
