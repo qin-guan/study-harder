@@ -1,0 +1,6 @@
+image:
+  file: Dockerfile
+
+tasks:
+  - name: Dev Server
+    command: mkdocs serve
