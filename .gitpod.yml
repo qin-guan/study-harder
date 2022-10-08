@@ -4,4 +4,4 @@ tasks:
 
 ports:
   - port: 8000
-    onOpen: notify
+    onOpen: open-preview
