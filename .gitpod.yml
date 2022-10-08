@@ -1,6 +1,5 @@
 tasks:
-  - init: |
-      pip install mkdocs-material mkdocs-minify-plugin mkdocs-redirects mkdocs-git-revision-date-localized-plugin mkdocs-awesome-pages-plugin pymdown-extensions mkdocs-glightbox
+  - init: pip install -r requirements.txt
     command: mkdocs serve
 
 ports:

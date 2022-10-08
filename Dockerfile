@@ -1,6 +1,5 @@
 FROM squidfunk/mkdocs-material
 
-RUN pip install mkdocs-git-revision-date-localized-plugin
-RUN pip install mkdocs-awesome-pages-plugin
-RUN pip install pymdown-extensions
-RUN pip install mkdocs-glightbox
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
