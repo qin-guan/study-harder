@@ -4,3 +4,7 @@ image:
 tasks:
   - name: Dev Server
     command: mkdocs serve
+
+ports:
+  - port: 8000
+    onOpen: notify
