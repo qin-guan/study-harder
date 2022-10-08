@@ -1,16 +1,19 @@
 # Cloud deployment models
 
 Private cloud
+
 * Cloud provider is also the sole cloud consumer
 * Hardware is maintained by consumer
 * Unused resources during off peak hours
 
 All in cloud
+
 * All resources are hosted in a cloud provider
 * Hardware is maintained by cloud provider
 * Can scale up and down to meet demand
 
 Hybrid cloud
+
 * Resources are hosted in a combination of private and public cloud
 
 <table>
