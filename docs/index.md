@@ -1,0 +1,3 @@
+# Study Harder
+
+*Study Harder.*
