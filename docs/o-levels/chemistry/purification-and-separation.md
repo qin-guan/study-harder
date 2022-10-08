@@ -87,10 +87,10 @@ crystals
 
 Used to separate a mixture of solids, one of which sublimes
 
-:::tip Examples
-* Iodine in iodine and sand will sublime when heated
-* Solid CO2 (dry ice)
-:::
+!!! tip "Examples"
+
+    * Iodine in iodine and sand will sublime when heated
+    * Solid CO2 (dry ice)
 
 Ammonium compounds can also sublime
 

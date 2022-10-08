@@ -4,9 +4,10 @@ Active Directory (AD) is a Microsoft product that allows you to manage resources
 
 These resources reside under a "directory", and can include users, groups, computers, printers, and other items.
 
-:::tip Goal
-Active Directory aims to provide simplified and efficient system administration
-:::
+!!! tip "Goal"
+
+    Active Directory aims to provide simplified and efficient system administration
+
 
 AD works with and requires a DNS server, and is also incorporated into most Windows Server operating systems.
 
@@ -16,9 +17,9 @@ AD makes use of:
 * **X.500**
   * ISO standard for *directory structure, content, and access*
 
-:::danger Important
-AD does not implement X.500 standard for **access**
-:::
+!!! danger "Important"
+
+    AD does not implement X.500 standard for **access**
 
 ## Forest, tree & branch
 
@@ -57,10 +58,10 @@ It also has the following properties:
 * It has an [internet domain](#forest-tree--branch)
 * It has *one or more* domain controllers
 
-:::warning
-Each Active Directory domain must have an Internet name.
-This is how the client will connect to the domain.
-:::
+!!! warning
+
+    Each Active Directory domain must have an Internet name.
+    This is how the client will connect to the domain.
 
 ## Organization Units
 
@@ -68,11 +69,11 @@ Organization Units (OUs) allow administrators to logically organize objects in a
 
 For example, an OU can be "Admin", and can contain users, computers, or groups.
 
-:::tip Benefits
-* Easily organize and manage AD objects
-* Delegate user in OU to perform certain tasks
-* Apply policies to a **group** of users/computers
-:::
+!!! tip "Benefits"
+
+    * Easily organize and manage AD objects
+    * Delegate user in OU to perform certain tasks
+    * Apply policies to a **group** of users/computers
 
 ## Group Policies 
 
@@ -91,10 +92,10 @@ There are a few settings available for configuration:
 * **Administrative templates**
   * Lockdown policy
 
-:::tip
-Computers query domain controller every 60 to 90 minutes for changes
-If you're doing a practical, just force manual updates
-:::
+!!! tip
+
+    Computers query domain controller every 60 to 90 minutes for changes
+    If you're doing a practical, just force manual updates
 
 ## Windows Servers
 
@@ -119,16 +120,16 @@ There are three types of relationships a Windows Server instance can have with a
 
 They also provide *authentication and authorization* services, and *share information* with other domain controllers.
 
-:::tip
-Every domain in a directory requires a domain controller
-:::
+!!! tip
+
+    Every domain in a directory requires a domain controller
 
 ### Replication
 
 AD database can be **replicated** across multiple domain controllers for fault tolerance.
 
 | Advantages                                   | Disadvantages             |
-| -------------------------------------------- | ------------------------- |
+|----------------------------------------------|---------------------------|
 | Fault tolerance                              | Cost (hardware, licenses) |
 | Improved performance in distributed networks | Sync delays               |
 | Scalable                                     | Increased bandwidth usage |
@@ -144,9 +145,9 @@ In **Windows**, there are two types of user accounts:
 
 * Maintained locally on a computer
 
-:::tip
-Windows also contains the default `Guest` and `Administrator` local user accounts
-:::
+!!! tip
+
+    Windows also contains the default `Guest` and `Administrator` local user accounts
 
 **Domain** user accounts are:
 
@@ -158,9 +159,9 @@ Once a domain user is authenticated by the controller, an **access token** is ob
 
 The **access token** determines permissions granted to resources for the user.
 
-:::tip
-Domain user accounts allow centralized user management through AD
-:::
+!!! tip
+
+    Domain user accounts allow centralized user management through AD
 
 ### Requirements
 
@@ -178,22 +179,22 @@ A computer account has the **same name as the computer**, and must be unique wit
 
 This computer account can be **granted permissions** to resources in the AD, and can also be part of a group.
 
-:::warning Important
-Every computer in an AD needs to have a computer account
-:::
+!!!warning "Important"
 
-:::details Benefits
+    Every computer in an AD needs to have a computer account
+
+### Benefits
+
 * **Authentication**
-  * Requiring computer accounts ensure that a user can only logon from a computer that is a member of the domain
+    * Requiring computer accounts ensure that a user can only logon from a computer that is a member of the domain
 * Computer access can be audited
 * Computers can be managed as a fleet 
-  * Easier software deployment
-  * Desktop management
-:::
+    * Easier software deployment
+    * Desktop management
+  
+!!! tip
 
-:::tip
-Keep better track of computers by moving them to an OU!
-:::
+    Keep better track of computers by moving them to an OU!
 
 ## Group accounts
 
@@ -203,9 +204,9 @@ Groups **simplify administration** --- configuration changes such as permissions
 
 A **user** can belong in multiple groups, and a group can contain other groups.
 
-:::danger
-A group can contain a max of 5000 members
-:::
+!!! danger
+
+    A group can contain a max of 5000 members
 
 ### Group types
 
@@ -214,16 +215,17 @@ There are two types of groups:
 * Distribution: for sending email, no permissions can be assigned
 * Security: for assigning permissions
 
-:::tip
-Groups can be converted between the two types
-:::
+!!! tip
+
+    Groups can be converted between the two types
+
 
 ### Group scope
 
 There are three scopes of groups, and determine the locality of the group:
 
 | Type         | Scope                       | Permission               | Members                                                                                                            | Can be members of                                                             |
-| ------------ | --------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+|--------------|-----------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 | Domain local | Own domain                  | Own domain               | Users, *global and universal* groups from any domain in the forest, *domain local* groups from the **same** domain | Domain local groups                                                           |
 | Global       | Own domain, trusted domains | Any domain in the forest | Users, *global groups* from own domain                                                                             | Universal and domain local groups in any domain, global groups in same domain |
 | Universal    | Any domain                  | Any domain in the forest | Users, *global and universal* groups from any domain in the forest                                                 | *Domain local and universal* groups in any domain                             |
@@ -236,9 +238,9 @@ There are three scopes of groups, and determine the locality of the group:
   * Domain local
 * Global group -> domain local group
 
-:::tip
-Assign permissions to domain local groups
-:::
+!!! tip
+
+    Assign permissions to domain local groups
 
 ## Best practices
 
@@ -259,11 +261,11 @@ When a user has both NTFS and network share permissions, the two permission sets
 * NTFS chooses the **LEAST RESTRICTIVE** permission set
   * **EXCEPT** when **DENY** overrides **ALLOW**
 
-:::danger
-Explicit permissions override implicit permissions
+!!! danger
 
-An explicit allow **WILL** override an implicit deny
-:::
+    Explicit permissions override implicit permissions
+
+    An explicit allow **WILL** override an implicit deny
 
 ### Network share
 

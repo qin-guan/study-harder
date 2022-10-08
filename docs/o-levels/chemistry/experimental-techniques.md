@@ -1,12 +1,9 @@
 # Experimental Techniques and Measurements
 
-
-
 | Mass                    | Volume                        | Time                  | Temperature       |
 |-------------------------|-------------------------------|-----------------------|-------------------|
 | Kg                      | $cm^3$ or $dm^3$              | Hours/minutes/seconds | Celsius or Kelvin |
 | Beam/electronic balance | Measuring cylinder or burette | Stopwatch             | Thermometer       | 
-
 
 
 ## Measuring apparatus
@@ -15,29 +12,21 @@
 
 Accuracy: 2 d.p.
 
-::: tip
-**Why is there a mini glass enclosure around the balance?**
+!!! tip
 
-To prevent wind from affecting measurement
-:::
+    **Why is there a mini glass enclosure around the balance?**
+
+    To prevent wind from affecting measurement
 
 ### Measuring cylinder
 
 For approximate measurements
 
-
-
 $1cm^3 \textrm{ to } 1000cm^3 \textrm{ or more }$
-
-
 
 ### Burette
 
-
-
 For accurate measurements to $0.05cm^3$
-
-
 
 ### Pipette
 
@@ -55,9 +44,9 @@ For accurate measurements to $0.05cm^3$
 * (small syringe) small volume of **liquids**
 * (large syringe) large volume of **gasses**
 
-::: warning READING OF A LIQUID
-Read at bottom of meniscus
-:::
+!!! warning
+
+    Read at bottom of meniscus
 
 ## Common questions
 
@@ -78,75 +67,78 @@ Considerations to be made
 
 ### Displacement of water
 
-
-
 For gasses which are insoluble in water
 
 * $H_2, O_2, CO_2$
 
-<img src="./experimental-techniques/displacement-of-water.png" style="margin: auto;"/>
-
-
+<figure markdown>
+  ![Displacement of water](experimental-techniques/displacement-of-water.png)
+  <figcaption>Displacement of water</figcaption>
+</figure>
 
 ### Downward delivery
-
-
 
 For gasses which are denser than air (and soluble in water)
 
 * $CI_2$
 
-
-
-<img src="./experimental-techniques/downward-delivery.png" style="margin: auto;"/>
+<figure markdown>
+  ![Downward delivery](experimental-techniques/downward-delivery.png)
+  <figcaption>Downward delivery</figcaption>
+</figure>
 
 ### Upward delivery
-
-
 
 For gasses which are less dense than air (and soluble in water)
 
 * $NH_3, H_2$
 
-
-
-<img src="./experimental-techniques/upward-delivery.png" style="margin: auto;"/>
+<figure markdown>
+  ![Upward delivery](experimental-techniques/upward-delivery.png)
+  <figcaption>Upward delivery</figcaption>
+</figure>
 
 ### Using a gas syringe
 
 When there is a need to monitor the rate of evolution of a gas
 
-<img src="./experimental-techniques/gas-syringe.png" style="margin: auto;"/>
+<figure markdown>
+  ![Gas syringe](experimental-techniques/gas-syringe.png)
+  <figcaption>Gas syringe</figcaption>
+</figure>
 
 ## Methods of collecting dry gasses
 
 ### Acidic
 
-
-
 Concentrated sulfuric acid
 
 * $H_2SO_4$
 
-
-
-<img src="./experimental-techniques/acidic.png" style="margin: auto;"/>
+<figure markdown>
+  ![Acidic](experimental-techniques/acidic.png)
+  <figcaption>Acidic</figcaption>
+</figure>
 
 ### Alkaline
 
 Calcium Oxide
 
-<img src="./experimental-techniques/alkaline.png" style="margin: auto;"/>
+<figure markdown>
+  ![Alkaline](experimental-techniques/alkaline.png)
+  <figcaption>Alkaline</figcaption>
+</figure>
 
 ### Neutral
 
 Fused Calcium Chloride
 
-<img src="./experimental-techniques/fused-calcium-chloride.png" style="margin: auto;" />
+<figure markdown>
+  ![Fused calcium chloride](experimental-techniques/fused-calcium-chloride.png)
+  <figcaption>Fused calcium chloride</figcaption>
+</figure>
 
 ## Properties of common gasses
-
-
 
 | Gas               | Formula | Color           | Density (compared to air) | Solubility in water |
 |-------------------|---------|-----------------|---------------------------|---------------------|
@@ -160,8 +152,6 @@ Fused Calcium Chloride
 | Nitrogen          | $N_2$   | Colorless       | Slightly denser           | Insoluble           | 
 | Sulphur dioxide   | $SO_2$  | Brownish        | Denser                    | Very soluble        |
 | Helium            | $He$    | Colorless       | Less dense                | Insoluble           |
-
-
 
 ## Testing for ammonia gas
 
@@ -180,8 +170,6 @@ Usually white fumes can be seen
   * Thermal decomposition
 
 ## Identify colors of compounds
-
-
 
 * Solid
   * Shiny
@@ -205,10 +193,7 @@ Usually white fumes can be seen
   * Colored
   * Colorless
 
+???+ tip "Details"
 
-
-:::details Details
-
-* Calcium bicarbonate is soluble in lime water
-* Displacement reactions are exothermic
-  :::
+    * Calcium bicarbonate is soluble in lime water
+    * Displacement reactions are exothermic

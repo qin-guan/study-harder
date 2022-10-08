@@ -8,19 +8,36 @@ repo_name: qin-guan/study-harder
 edit_uri: edit/main/docs/
 
 markdown_extensions:
-  - pymdownx.arithmatex
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/tablesort.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
 
 plugins:
   - search
-  - awesome-pages
   - social
+  - awesome-pages
+  - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
       enabled: !ENV [ CI, false ]
 
 theme:
   name: material
-  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
