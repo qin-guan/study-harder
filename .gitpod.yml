@@ -1,8 +1,6 @@
-image:
-  file: .gitpod.Dockerfile
-
 tasks:
-  - name: Dev Server
+  - init: |
+      pip install mkdocs-material mkdocs-minify-plugin mkdocs-redirects mkdocs-git-revision-date-localized-plugin mkdocs-awesome-pages-plugin pymdown-extensions mkdocs-glightbox
     command: mkdocs serve
 
 ports:
