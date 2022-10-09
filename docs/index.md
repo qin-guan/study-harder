@@ -1,3 +1,7 @@
+---
+glightbox: false
+---
+
 # Study Harder
 
 *Study Harder.*
