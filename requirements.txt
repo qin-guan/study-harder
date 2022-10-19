@@ -5,3 +5,4 @@ mkdocs-git-revision-date-localized-plugin
 pymdown-extensions
 mkdocs-awesome-pages-plugin
 mkdocs-glightbox
+mdx_truly_sane_lists
