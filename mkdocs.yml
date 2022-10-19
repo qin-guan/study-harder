@@ -8,16 +8,19 @@ repo_name: qin-guan/study-harder
 edit_uri: edit/main/docs/
 
 markdown_extensions:
+  - abbr
   - tables
   - admonition
+  - footnotes
   - attr_list
   - md_in_html
+  - attr_list
+  - def_list
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
-  - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
