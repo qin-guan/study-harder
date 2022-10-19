@@ -17,26 +17,26 @@ A server takes requests sent by a client (another server, or PC, etc) and sends 
 The server can also process the data, and perform other actions. Therefore, there are multiple types of servers:
 
 * Application/web server
-  * Web servers are used to provide data (i.e. HTML files) to a client
-    * i.e. IIS
-  * Application servers processes business logic (i.e. creating new user accounts)
-    * i.e. ASP.NET Core server
-  * The terminology is interchangeable, an application server can also serve HTML files to a client
+    * Web servers are used to provide data (i.e. HTML files) to a client
+        * i.e. IIS
+    * Application servers processes business logic (i.e. creating new user accounts)
+        * i.e. ASP.NET Core server
+    * The terminology is interchangeable, an application server can also serve HTML files to a client
 
 * Database server
-  * Runs a database such as PostgreSQL
+    * Runs a database such as PostgreSQL
 
 * File server
-  * Runs a file system that can be accessed by network users
-    * i.e. IIS
+    * Runs a file system that can be accessed by network users
+        * i.e. IIS
 
 * Network services server
-  * Provide services to allow users to access the network
-    * i.e. DNS, DHCP, etc
+    * Provide services to allow users to access the network
+        * i.e. DNS, DHCP, etc
 
 * Directory services server
-  * Provides authentication/authorization services
-    * i.e. Active Directory
+    * Provides authentication/authorization services
+        * i.e. Active Directory
 
 ## CIA triad
 
