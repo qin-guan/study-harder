@@ -120,7 +120,7 @@ There are different types of data backups that can be used to recover data:
 
 | Type                | Description                                                        | Backup duration | Restore duration |
 | ------------------- | ------------------------------------------------------------------ | --------------- | ---------------- |
-| Full backup         | Backs up all data                                                  | Long            | Low              |
+| Full backup         | Backs up all data                                                  | High            | Low              |
 | Incremental backup  | Backs up only the data that has changed since the last backup      | Low             | High             |
 | Differential backup | Backs up only the data that has changed since the last full backup | Medium          | Medium           |
 
