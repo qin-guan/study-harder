@@ -5,6 +5,6 @@
 
 
 ## Emojis
-:thought_balloon: = no need to memorize for now, but good to know what it is
-:thumbsup: = pros/benefits of a certain topic
-:thumbsdown: = cons/limitations of a certain topic
+- :thought_balloon: = no need to memorize for now, but good to know what it is
+- :thumbsup: = pros/benefits of a certain topic
+- :thumbsdown: = cons/limitations of a certain topic
