@@ -1,5 +1,9 @@
 # Basic Static Analysis
 
+!!! warning
+
+    The content is still WIP, please come back at another time!
+
 ## Malware Fingerprint
 First step to analyse a suspicious file is to scaen the file using an Antivirus Virus (AV) scanner. Using the scanner, it should look out for these things:
 1.  File Signatures
