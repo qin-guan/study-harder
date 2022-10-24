@@ -92,8 +92,9 @@ Contains the following
 
 ---
 
-# [Activity 1.1](activity1.md)
+# [Activity 1.1](activity1.1.md)
 
+---
 
 ## What is HTTPS?
 HTTP does not encrypt the data in transit whereas
