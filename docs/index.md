@@ -10,7 +10,7 @@ glightbox: false
 *Study Harder.*
 *Study Harder.*
 *Study Harder.*
-*Study Harder.* 
+*Study Harder.*
 
 And hopefully contribute to this collection as well :D
 
