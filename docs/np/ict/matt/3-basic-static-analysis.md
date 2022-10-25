@@ -23,6 +23,10 @@ However, AVs are **not** perfect. A malicious file may be detected by one AV, bu
 - Scans files using different AV engines
 - Generates a report and provide total number of AV which deems the scanned file as suspicious.
 
+!!! warning "Abuse"
+
+    Malware authors can abuse the system to check how many AVs can detect their malware. This allows malware authors to **fine tune** their malware, and make it more **undetectable**.
+
 ### Hashing
 
 Hashing is a common way of fingerprinting a malware. Common hashing functions - MD5,SHA-1. By calculating the hash of the original file and the suspected to be suspicious file, we can check whether the executable/program is truly authentic.

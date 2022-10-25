@@ -1,4 +1,8 @@
 title: Malware Analysis Tools and Techniques
 nav:
 - guide-to-matt-notes.md
+- 1-introduction-to-malware.md
+- 2-windows-malware.md
+- 3-basic-static-analysis.md
+- 4-basic-dynamic-analysis.md
 - ...
