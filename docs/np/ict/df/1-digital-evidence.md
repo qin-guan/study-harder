@@ -67,5 +67,9 @@
     - Only used in certain circumstances.
       - Example: Excessively large disk
   - Logical
+    - Only certain files are acquired
+
+## Drive Layout Example
+
 
 ## EnCase Evidence File (E01)
