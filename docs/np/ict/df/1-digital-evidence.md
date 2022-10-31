@@ -70,6 +70,59 @@
     - Only certain files are acquired
 
 ## Drive Layout Example
+![](1-digital-evidence-images/1-de-drive-layout-example.png)
 
+## Traditional Imaging Process
+- Traditional imaging is performed on static drives (hard drives)
+- Computer system has been turned off and booted to a forensic imaging environment, or the disk has been plugged into an imager or examination workstation for duplication
+- Specialised hardware is used to prevent source media from being modified
+  - Hardware Write Blockers
+    - Hardware write blocker is a device that sits in the connection between a computer and a storage unit
+    - Monitors the commands that are being issued and prevent computer from writing data to the storage device
+    - Comes with many interfaces, such as ATA, SCSI, Firewire, USB, SATA, etc.
+
+## Image Creation Tools
+- Commercial Software Tool:
+  - Guidance Software - EnCase
+  - AccessData FTK Imager
+- Open Source Tool (Unix/Linux)
+  - DC3dd
+  - DCFLdd
+  - dd
 
 ## EnCase Evidence File (E01)
+- EnCase evidence file is often called the image file
+  - Has the naming convention of '.Exx'.
+    - Example: fraud.E01
+- Contains the bit-stream image of the suspect drive, CRC verification, case identification info (header) and an MD5 hash
+- Head information as entered by the examiner become part of the evidence file and cannot be changed
+
+## Physical Layout of EnCase Evidence File
+- Evidence file contains 3 basic parts:
+  - Header
+  - Data blocks
+    - Bit by bit copy of the data blocks on the suspect media
+  - Checksum and Hash
+    - 32-bits verification (CRC - Cyclical Redundancy Check)
+    - MD5 hash for checking for integrity
+
+![](1-digital-evidence-images/1-de-layout-encase-evidence-file.png)
+
+## EnCase Evidence File Format
+- EnCase computes a CRC for every block of 64 sectors of data (32 Kbytes)
+  - 1 sector = 512 bytes
+- 128-bit MD5 hash is computed for the entire data block section (exclude the CRCs)
+  - MD5 hash verifies that both the imaged media and the evidence file contain the exact data
+- When an '.Exx' evidence file is added to a case, EnCase automatically verifies the CRC and re-computes has value for the evidence data within the '.Exx' file
+- Verification process can only be successfully completed after both the MD5 acquisition and verification hash values match and no CRC errors are reported
+
+## Challenges faced in Computer Evidence
+- Growth in electronic devices and different platform
+  - Example: Smartphones, tablets, ipod, GPS devices, etc.
+- Growth in storage size
+  - Example: Time taken to search a 1 TB hard drive
+- Location/Storage to store huge evidence files
+- Challenges surrounding authenticity and integrity of evidence
+  - Was the data altered?
+  - Was the program that generated the data reliable?
+- Ensuring integrity of evidence, special hardware and software tools are used in digital forensic investigations
