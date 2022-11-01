@@ -43,4 +43,3 @@ What to bring along for a forensic investigation?
 1. Gloves
 2. Magnifying glass
 3. UPS
-

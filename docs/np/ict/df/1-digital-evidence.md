@@ -1,6 +1,7 @@
 # Digital Evidence
 
 ## What is Digital Evidence?
+
 - Digital evidence may be found in storage devices such as:
   - Hard Disk Drive (HDD)
   - Random Access Memory (RAM)
@@ -21,6 +22,7 @@
   - Video and Audio files
 
 ## Categories of Forensic Data
+
 - Computer forensics focuses on 3 categories of data:
   - Active Data
     - Data that can be seen
@@ -34,6 +36,7 @@
       - Can be stored offshore in tapes, flash drives, HDDs, SSDs, etc.
 
 ## Persistent vs Volatile Data
+
 - A significant amount of data is gathered, preserved, and analysed
 - 2 basic types of data are collected
   - Persistent
@@ -44,6 +47,7 @@
     - Volatile data resides in registries, cache, and random access memory (RAM)
 
 ## Forensic Image
+
 - Forensic image of an affected or suspect computer system is one of the most comprehensive sources of information
 - Forensic image is a copy of original evidence generally collected by a tool that performs bit-level copying from one location to another
 - 3 common disk image formats
@@ -56,6 +60,7 @@
   - Copies of removable media
   
 ## Forensic Image Format
+
 - FI should create 2 bit stream copies of evidence
 - 3 types of images:
   - Complete disk
@@ -70,9 +75,11 @@
     - Only certain files are acquired
 
 ## Drive Layout Example
-![](1-digital-evidence-images/1-de-drive-layout-example.png)
+
+![Drive layout example](1-digital-evidence-images/1-de-drive-layout-example.png)
 
 ## Traditional Imaging Process
+
 - Traditional imaging is performed on static drives (hard drives)
 - Computer system has been turned off and booted to a forensic imaging environment, or the disk has been plugged into an imager or examination workstation for duplication
 - Specialised hardware is used to prevent source media from being modified
@@ -82,6 +89,7 @@
     - Comes with many interfaces, such as ATA, SCSI, Firewire, USB, SATA, etc.
 
 ## Image Creation Tools
+
 - Commercial Software Tool:
   - Guidance Software - EnCase
   - AccessData FTK Imager
@@ -91,6 +99,7 @@
   - dd
 
 ## EnCase Evidence File (E01)
+
 - EnCase evidence file is often called the image file
   - Has the naming convention of '.Exx'.
     - Example: fraud.E01
@@ -98,6 +107,7 @@
 - Head information as entered by the examiner become part of the evidence file and cannot be changed
 
 ## Physical Layout of EnCase Evidence File
+
 - Evidence file contains 3 basic parts:
   - Header
   - Data blocks
@@ -106,9 +116,10 @@
     - 32-bits verification (CRC - Cyclical Redundancy Check)
     - MD5 hash for checking for integrity
 
-![](1-digital-evidence-images/1-de-layout-encase-evidence-file.png)
+![EnCase Evidence File](1-digital-evidence-images/1-de-layout-encase-evidence-file.png)
 
 ## EnCase Evidence File Format
+
 - EnCase computes a CRC for every block of 64 sectors of data (32 Kbytes)
   - 1 sector = 512 bytes
 - 128-bit MD5 hash is computed for the entire data block section (exclude the CRCs)
@@ -117,6 +128,7 @@
 - Verification process can only be successfully completed after both the MD5 acquisition and verification hash values match and no CRC errors are reported
 
 ## Challenges faced in Computer Evidence
+
 - Growth in electronic devices and different platform
   - Example: Smartphones, tablets, ipod, GPS devices, etc.
 - Growth in storage size
