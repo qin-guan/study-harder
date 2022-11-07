@@ -285,3 +285,7 @@ Store evidence away from high temperature and humidity. Conditions too hot, cold
 Do not place them in car boot. Rear seat is a better choice.
 
 Maintain chain of custody on evidence to be transported.
+
+## Evidence Acquisition
+
+The original evidence should be acquired in a manner that protects and preserves the integrity of the evidence.
