@@ -1,5 +1,0 @@
-# Slack
-
-!!! important
-
-    * RAM slack

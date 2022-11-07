@@ -1,6 +1,11 @@
 # Evidence Extraction & Analysis
 
 ## Slack Space
+
+!!! important
+
+    * RAM slack
+
 - Unused space between the end of the actual file and the end of the defined data unit (cluster)
 - When file is written, and does not occupy the entire cluster, the remaining space is slack space
 - Example:
@@ -15,7 +20,7 @@
   - Programs files
   - Data files
 
-### What does a Hard Disk Drive contains?
+### What does a Hard Disk Drive contains? (Optional)
 - Tracks
   - Thin concentric circular strips on a disk or platter surface which comprise the magnetic medium to which data is written by the drive heads
 - Cylinder
