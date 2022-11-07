@@ -12,7 +12,7 @@ Infer conclusion C if $H_1\wedge$
 
 #### Proof by contradition
 
-#### Proof of the Contrapositive 
+#### Proof of the Contrapositive
 
 *[Syllogism]: An argument consisting two premises and a conclusion
 *[Modus Ponens]: Proof by contrapositive
