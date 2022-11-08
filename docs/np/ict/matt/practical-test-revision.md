@@ -12,8 +12,8 @@
 
        * The time it is compiled can show whether the malware is old/new. If it is a zero-day/relatively new malware, then most AVs might not be able to detect it.
 
-2. Dependency Walker
-3. BinText
+2. Dependency Walker - find possible functionalities of a malware
+3. BinText - find possible functionalities of a malware
 4. PEID - view whether malware is packed or unpacked
 
 ## How to Static Analysis
@@ -37,7 +37,27 @@
    ![Section Viewer of EP Section](https://user-images.githubusercontent.com/103948042/200547934-a41786a9-2087-41c5-b7a8-69f0e1be1c10.png)
    As metioned previously, **Raw Size > Virtual Size** helps to identify whether the malware is packed or not. If the R.Size is indeed > V.Size, then the malware is **packed**.
 ##### 3. Open Dependency Walker and observe the PE.
-   
+Firstly, observe the number of files when unpacked. If the number of files are lesser than 4, then it is a 🚩 red flag - suspect that the malware is packed.
+
+##### 4. Open BinText and observe the PE. Look for the following things:
+1. Network Based Indicators 
+- Some examples being connection to http/https or ip address or domain , creation of sockets. 
+<br>Some more examples below:
+- [ws2_32](https://learn.microsoft.com/en-us/windows/win32/winsock/windows-sockets-start-page-2) 
+- CONNECT %s%HTTP/1.0 , followed by ?503 and 200 (May be status codes) 
+- Any domain names
+- 
+2. Host Based Indicators
+- Some examples being creation of mutext or process , file manipulation or registry records
+- Some more examples below:
+- SOFTWARE\Classes\http -> as long as there is SOFTWARE, will refers to registry records
+- SOFTWARE\\Microsoft\Windows\CurrentVersion\Run -> refering to dowwnloading the malware at Run folder in the registry(files in this folder will be executed when the computer starts)
+
+(Mutex - used to protect a shared resource from simultaneous acces by multiple processes. A string which processes must own so that it can execute the code that requires access to a shared resource. If processes do not have ownership of the mutext, they are unable to execute their own code that requires access to a shared resourced and must wait until they have ownership of the mutex.)
+
+3. Important, Perhaps some susipicious things?
+- File Names (eg. vmx32to64.exe) 
+- 
 
 ## Dynamic Analysis Tools
 
