@@ -28,6 +28,38 @@ Assembly language comprises instructions that are sent to a CPU. There are multi
 
 : A register that points to the next instruction to be executed.
 
+## Operands
+
+### Immediate operands
+
+Fixed values
+
+### Register operands
+
+Registers (e.g. `ecx`)
+
+### Opcode
+
+Opcode is the machine language equivalent of an assembly instruction
+
+### Memory adress
+
+e.g. `[ecx]`
+
+!!! tip
+
+    EDX can be used for division
+    
+    EAX can be used for multiplication
+    
+    EAX can also hold return value for function call
+    
+    ESP, EBP used for function call/return
+    
+    ESI, EDI, ECX are used in repeat instructions
+    
+    Index registeres (ESI, EDI) may store memory addresses
+
 ## Memory
 
 Memory can be split into different parts.
