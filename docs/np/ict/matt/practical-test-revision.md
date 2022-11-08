@@ -64,3 +64,9 @@
 1. MD5hash - compare the hash value of created files to the original files,
 
    Sometimes, malwares like to duplicate itself in the WINDOWS32 file and rename itself to hide the fact that the .dll/.exe is harmful.
+
+3Ls
+
+- Little Endian
+- Left side
+- Least significant bit
