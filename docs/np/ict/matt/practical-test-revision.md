@@ -21,22 +21,22 @@
 
        * The following is a suggested method to perform analysis, however, do use the tools as and when you feel like it it required.
 
-1. Open PEview to find out when the PE is compiled
-2. Open PEID and analyse the results - is it packed or unpacked?
+##### 1. Open PEview to find out when the PE is compiled
+##### 2. Open PEID and analyse the results - is it packed or unpacked?
 
    To find out whether it is packed or not, there are **two** main ways:
    1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE. 
    Some examples of common compilers are :
    -  PEncrypt
    -  Microsoft Visual Studio C++
-!!! note "Space where the compiler is suppoed to be is empty?"
+   !!! note "Space where the compiler is suppoed to be is empty?"
 
-    *  You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
+       *  You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
    
    2. Press the arrow to the right of 'EP Section'. A popup as seen below should appear.
    ![Section Viewer of EP Section](https://user-images.githubusercontent.com/103948042/200547934-a41786a9-2087-41c5-b7a8-69f0e1be1c10.png)
    As metioned previously, **Raw Size > Virtual Size** helps to identify whether the malware is packed or not. If the R.Size is indeed > V.Size, then the malware is **packed**.
-3. Open Dependency Walker and observe the PE.
+##### 3. Open Dependency Walker and observe the PE.
    
 
 ## Dynamic Analysis Tools
@@ -49,17 +49,17 @@
 
 ## How to Dynamic Analysis
 
-1. Set the IP Address in Local Area Connection -> DNS Server -> 127.0.0.1
+##### 1. Set the IP Address in Local Area Connection -> DNS Server -> 127.0.0.1
 
    !!! note "Why do we need to set the DNS Server to 127.0.0.1 (loopback address, is a fake network) ?"
 
        * Some malwares will try to establish a connection to a domain/IP and you can use dynamic malware analysis tools to help detect such attempts
        * Using this fake network address will secure the network, and the rest of the internet or LAN is not affected even if the malware is a worm.
 
-2. Set DNS Reply address in ApateDNS to 127.0.0.1 and start the server
-3. Execute Process Explorer and Process Monitor
-4. Execute in two separate Command prompt tabs the following two commands : `nc -l -p 80 (http) and nc -l -p 443 (https)`
-5. Execute RegShot and take first shot
+##### 2. Set DNS Reply address in ApateDNS to 127.0.0.1 and start the server
+##### 3. Execute Process Explorer and Process Monitor
+##### 4. Execute in two separate Command prompt tabs the following two commands : `nc -l -p 80 (http) and nc -l -p 443 (https)`
+##### 5. Execute RegShot and take first shot
 
    !!! warning "Make sure you do these before Step 5! "
 
@@ -67,7 +67,7 @@
 
        * In Regshot, make sure that the Scan Dirs is set to c:/
 
-6. Execute the malware - * watch out whether it is a .dll or an .exe 
+##### 6. Execute the malware - * watch out whether it is a .dll or an .exe 
 
    !!! note "How to run .dll/.exe files?"
 
@@ -75,10 +75,10 @@
        * `cd` to the directory where the malware is.
        * The next command - `rundll32.exe (DLLNAME), [export argument (found in dependancy walker)]`
 
-7. Check that the malware has run/exectued in Process Monitoring
-8. If malware has executed, take a second shot in RegShot and compare.
-9. Check the rest of with the rest of the tools - ApateDNS, the two cmds, which provide **Network-Based Indicators**
-10. Check on Process Explorer
+##### 7. Check that the malware has run/exectued in Process Monitoring
+##### 8. If malware has executed, take a second shot in RegShot and compare.
+##### 9. Check the rest of with the rest of the tools - ApateDNS, the two cmds, which provide **Network-Based Indicators**
+##### 10. Check on Process Explorer
 
 ## Tools that may/may not be used during both analysis
 
