@@ -8,9 +8,9 @@
 
 1. PEview - view when the PE is compiled in the file header
 
-   !!! note "Why do we need to know when the file is compiled?"
+!!! note "Why do we need to know when the file is compiled?"
 
-       * The time it is compiled can show whether the malware is old/new. If it is a zero-day/relatively new malware, then most AVs might not be able to detect it.
+    * The time it is compiled can show whether the malware is old/new. If it is a zero-day/relatively new malware, then most AVs might not be able to detect it.
 
 2. Dependency Walker - find possible functionalities of a malware
 3. BinText - find possible functionalities of a malware
