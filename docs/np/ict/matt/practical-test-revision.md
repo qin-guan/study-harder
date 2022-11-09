@@ -30,11 +30,11 @@ Location to check compilation date and time stamp is (IMAGE_NT_HEADERS -> IMAGE_
 To find out whether it is packed or not, there are **two** main ways:
 
 1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE. 
+   
+!!! tip "How to tell if PE is packed or not?"
 
-   Some examples of common compilers are :
-
-   - PEncrypt
-   - Microsoft Visual Studio C++
+    * Recognisable Programming Language - malware is **not** packed (eg. Microsoft Visual Studio C++)
+    * Any sort of obscuring/encryption(any of these two actions pack malware) software, or hiding of the compiler name - malware **may** be packed <sub><sup>(high chance)</sub></sup> (eg. PEncrypt)
 
 !!! note "Space where the compiler is supposed to be is empty?"
 
@@ -46,7 +46,7 @@ To find out whether it is packed or not, there are **two** main ways:
 
    ![Section Viewer of EP Section](https://user-images.githubusercontent.com/103948042/200547934-a41786a9-2087-41c5-b7a8-69f0e1be1c10.png)
 
-   As mentioned previously, **Raw Size > Virtual Size** helps to identify whether the malware is packed or not. If the R.Size is indeed > V.Size, then the malware is **packed**.
+   As mentioned previously, **Raw Size > Virtual Size** helps to identify whether the malware is packed or not. If the R.Size is indeed > V.Size, then the malware is **unpacked**.
 
 ### 3. Open Dependency Walker and observe the PE
 
