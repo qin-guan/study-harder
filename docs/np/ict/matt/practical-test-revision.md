@@ -62,10 +62,10 @@ Firstly, observe the number of files when unpacked. If the number of files are l
 ## Dynamic Analysis Tools
 
 1. ApateDNS - record down any requests of connections to a domain/IP by the malware
-2. CMD netcat
-3. Process Explorer
-4. Process Monitor
-5. Regshot - scan directries for any changes that have been made
+2. CMD netcat - 
+3. Process Explorer - 
+4. Process Monitor - any process/registry keys accessed or modified in any way will be seen here , highly noisy 😞
+5. Regshot - scan directories and registry details for any changes that have been made
 
 ## How to Dynamic Analysis
 
@@ -78,8 +78,14 @@ Firstly, observe the number of files when unpacked. If the number of files are l
 
 ##### 2. Set DNS Reply address in ApateDNS to 127.0.0.1 and start the server
 ##### 3. Execute Process Explorer and Process Monitor
+- In Process Monitor, you can clear the records by pressing onto the capture button to disable it from listening **(but remember to enable it again later)**, then pressing onto the clear button. 
+- ![Clearing history in Process Monitor](https://user-images.githubusercontent.com/103948042/200710108-bed8bf7e-f8f7-4587-b7c3-0ae5a516362c.gif)
+
 ##### 4. Execute in two separate Command prompt tabs the following two commands : `nc -l -p 80 (http) and nc -l -p 443 (https)`
 ##### 5. Execute RegShot and take first shot
+-  Make sure that the option to scan directory is checked (defaultly not checked)
+-  The directory to scan should also be C:\
+![RegShot Settings](https://user-images.githubusercontent.com/103948042/200707925-f2cd647a-5323-40df-a45b-6e82b31d6b52.png)
 
    !!! warning "Make sure you do these before Step 5! "
 
