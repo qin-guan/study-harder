@@ -30,10 +30,10 @@ To find out whether it is packed or not, there are **two** main ways:
 
 1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE.
 
-Some examples of common compilers are :
+   Some examples of common compilers are :
 
-- PEncrypt
-- Microsoft Visual Studio C++
+   - PEncrypt
+   - Microsoft Visual Studio C++
 
 !!! note "Space where the compiler is suppoed to be is empty?"
 
@@ -41,9 +41,9 @@ Some examples of common compilers are :
 
 2. Press the arrow to the right of 'EP Section'. A popup as seen below should appear.
 
-![Section Viewer of EP Section](https://user-images.githubusercontent.com/103948042/200547934-a41786a9-2087-41c5-b7a8-69f0e1be1c10.png)
+   ![Section Viewer of EP Section](https://user-images.githubusercontent.com/103948042/200547934-a41786a9-2087-41c5-b7a8-69f0e1be1c10.png)
 
-As mentioned previously, **Raw Size > Virtual Size** helps to identify whether the malware is packed or not. If the R.Size is indeed > V.Size, then the malware is **packed**.
+   As mentioned previously, **Raw Size > Virtual Size** helps to identify whether the malware is packed or not. If the R.Size is indeed > V.Size, then the malware is **packed**.
 
 ### 3. Open Dependency Walker and observe the PE
 
@@ -53,26 +53,26 @@ Firstly, observe the number of files when unpacked. If the number of files are l
 
 1. Network Based Indicators
 
-- Some examples being connection to http/https or ip address or domain , creation of sockets.
+   - Some examples being connection to http/https or ip address or domain , creation of sockets.
 
-Some more examples below:
+   Some more examples below:
 
-- [ws2_32](https://learn.microsoft.com/en-us/windows/win32/winsock/windows-sockets-start-page-2)
-- CONNECT %s%HTTP/1.0 , followed by ?503 and 200 (May be status codes)
-- Any domain names
+   - [ws2_32](https://learn.microsoft.com/en-us/windows/win32/winsock/windows-sockets-start-page-2)
+   - CONNECT %s%HTTP/1.0 , followed by ?503 and 200 (May be status codes)
+   - Any domain names
 
 2. Host Based Indicators
 
-- Some examples being creation of mutext or process , file manipulation or registry records
-- Some more examples below:
-- SOFTWARE\Classes\http -> as long as there is SOFTWARE, will refers to registry records
-- SOFTWARE\\Microsoft\Windows\CurrentVersion\Run -> refering to dowwnloading the malware at Run folder in the registry(files in this folder will be executed when the computer starts)
+   - Some examples being creation of mutext or process , file manipulation or registry records
+   - Some more examples below:
+   - SOFTWARE\Classes\http -> as long as there is SOFTWARE, will refers to registry records
+   - SOFTWARE\\Microsoft\Windows\CurrentVersion\Run -> refering to dowwnloading the malware at Run folder in the registry(files in this folder will be executed when the computer starts)
 
-(Mutex - used to protect a shared resource from simultaneous acces by multiple processes. A string which processes must own so that it can execute the code that requires access to a shared resource. If processes do not have ownership of the mutext, they are unable to execute their own code that requires access to a shared resourced and must wait until they have ownership of the mutex.)
+   (Mutex - used to protect a shared resource from simultaneous acces by multiple processes. A string which processes must own so that it can execute the code that requires access to a shared resource. If processes do not have ownership of the mutext, they are unable to execute their own code that requires access to a shared resourced and must wait until they have ownership of the mutex.)
 
 3. Important, Perhaps some suspicious things?
 
-- File Names (eg. vmx32to64.exe)
+   - File Names (eg. vmx32to64.exe)
 
 ## Dynamic Analysis Tools
 
