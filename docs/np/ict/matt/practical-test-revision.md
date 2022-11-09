@@ -113,7 +113,7 @@ Firstly, observe the number of files when unpacked. If the number of files are l
 
 ##### 9. Check the rest of with the rest of the tools - ApateDNS, the two cmds <sub><sup>(for garbage text-> usually encrypted)</sub></sup> , which provide **Network-Based Indicators**, which are indicators of compromise.
 ##### 10. Check on Process Explorer
-There are 3 things you can do in process explorer that can make huge differences to your final inference of the malware's functionality.
+There are 3 things you can do in process explorer that can make huge differences to your final inference of the malware's functionality.<br>
    1. See `.dlls` functionality <sub><sup>(a huge cheat for those unsure of .dlls functionalities 🤩)</sub><sup>
    ![Finding out .dll's functionality](https://user-images.githubusercontent.com/103948042/200862646-b48de322-a0f0-4299-baa6-38b760a12073.gif)
 
@@ -129,7 +129,8 @@ There are 3 things you can do in process explorer that can make huge differences
    3. Look for Mutext (under Mutant type)
    ![mutext](https://user-images.githubusercontent.com/103948042/200864631-8b736767-d902-4f8d-bb19-1eba0a7e897f.gif)
    
-##### 11. Check on Process Monitor
+##### 11. Check on Process Monitor - Filter by Process Name/PID
+   After setting a filter via process name (eg. Lab03-01.exe or PID: 1120), set further filters for operations to help to further narrow down the scope of actions recorded by Process Monitor.
 
 ## Tools that may/may not be used during both analysis
 
