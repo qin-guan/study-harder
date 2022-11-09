@@ -23,21 +23,24 @@
     * The following is a suggested method to perform analysis, however, do use the tools as and when you feel like it it required.
 
 ### 1. Open PEview to find out when the PE is compiled
+Location to check compilation date and time stamp is (IMAGE_NT_HEADERS -> IMAGE_FILE_HEADER)
 
 ### 2. Open PEID and analyse the results - is it packed or unpacked?
 
 To find out whether it is packed or not, there are **two** main ways:
 
-1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE.
+1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE. 
 
    Some examples of common compilers are :
 
    - PEncrypt
    - Microsoft Visual Studio C++
 
-!!! note "Space where the compiler is suppoed to be is empty?"
+!!! note "Space where the compiler is supposed to be is empty?"
 
-    *  You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
+    * You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
+    * If still no signature detected, see imports and strings. Packed malware usually have very little imports and more gibberish strings
+
 
 2. Press the arrow to the right of 'EP Section'. A popup as seen below should appear.
 
@@ -47,7 +50,19 @@ To find out whether it is packed or not, there are **two** main ways:
 
 ### 3. Open Dependency Walker and observe the PE
 
-Firstly, observe the number of files when unpacked. If the number of files are lesser than 4, then it is a 🚩 red flag - suspect that the malware is packed.
+Firstly, observe the number of files when unpacked. If the number of files are lesser than 4, then it is a 🚩 red flag - suspect that the malware is packed. Some common `.dlls` are as such:
+   -  kernel32.dll 
+: Low level OS operations with includes memory management, input/output (I/O) operations, process and thread creation.
+   -  user32.dll
+: Creates and manipulates the standard elements of the Windows user interface, such as the desktop, windows, and menus.
+   -  advapi.dll
+: Advanced functionality that comes in addition to the kernel. Responsible for things like the Windows registry, restarting and shutting down the system.
+   -  WS2_32.dll
+: Use for low level socket connection used to run most network and internet applications.
+   -  winnet.dll
+: Higher level API that implements some higher level protocols for internet communication.
+
+<br>Secondly, packed malware will have lesser strings (check via BinText) as the files in the malware is either encrypted or obscured in different ways to make analysis difficult.
 
 ### 4. Open BinText and observe the PE. Look for the following things:
 
@@ -66,13 +81,15 @@ Firstly, observe the number of files when unpacked. If the number of files are l
    - Some examples being creation of mutext or process , file manipulation or registry records
    - Some more examples below:
    - SOFTWARE\Classes\http -> as long as there is SOFTWARE, will refers to registry records
-   - SOFTWARE\\Microsoft\Windows\CurrentVersion\Run -> refering to dowwnloading the malware at Run folder in the registry(files in this folder will be executed when the computer starts)
+   - SOFTWARE\\Microsoft\Windows\CurrentVersion\Run -> refering to downloading the malware at Run folder in the registry(files in this folder will be executed when the computer starts,sets up persistence)
 
    (Mutex - used to protect a shared resource from simultaneous acces by multiple processes. A string which processes must own so that it can execute the code that requires access to a shared resource. If processes do not have ownership of the mutext, they are unable to execute their own code that requires access to a shared resourced and must wait until they have ownership of the mutex.)
 
 3. Important, Perhaps some suspicious things?
 
    - File Names (eg. vmx32to64.exe)
+   - File Directory path
+   - URL, Domains, IP Address
 
 ## Dynamic Analysis Tools
 
@@ -115,8 +132,9 @@ Firstly, observe the number of files when unpacked. If the number of files are l
     * In Regshot, make sure that the Scan Dirs is set to c:/
 
 ### 6. Ensure that your screen has the 'Process Explorer' tab at the front, then execute the malware - * watch out whether it is a .dll or an .exe
+If the malware creates a service then in the command prompt execute netstart servicename. To stop the service execute netstop servicename.
 
-!!! note "How to run .dll/.exe files?"
+!!! note "How to run `.dll` files?"
 
     * Go to cmd
     * `cd` to the directory where the malware is.
@@ -134,6 +152,11 @@ Firstly, observe the number of files when unpacked. If the number of files are l
     * Under Values Modified, also check for Services that the malware may have
 
 ### 9. Check the rest of with the rest of the tools - ApateDNS, the two cmds <sub><sup>(for garbage text-> usually encrypted)</sub></sup> , which provide **Network-Based Indicators**, which are indicators of compromise
+
+!!! tip "ApateDNS notes"
+   
+    * Ignore those ipaddr,msupdate and localtime
+   
 
 ### 10. Check on Process Explorer
 
