@@ -93,7 +93,7 @@ Firstly, observe the number of files when unpacked. If the number of files are l
 
        * In Regshot, make sure that the Scan Dirs is set to c:/
 
-##### 6. Execute the malware - * watch out whether it is a .dll or an .exe 
+##### 6. Ensure that your screen has the 'Process Explorer' tab at the front, then execute the malware - * watch out whether it is a .dll or an .exe 
 
    !!! note "How to run .dll/.exe files?"
 
@@ -101,10 +101,35 @@ Firstly, observe the number of files when unpacked. If the number of files are l
        * `cd` to the directory where the malware is.
        * The next command - `rundll32.exe (DLLNAME), [export argument (found in dependancy walker)]`
 
-##### 7. Check that the malware has run/exectued in Process Monitoring
+##### 7. Check that the malware has run/exectued in Process Explorer - the process of running the malware will pop out there <sub><sup>(may bevery fast though)</sub></sup>
 ##### 8. If malware has executed, take a second shot in RegShot and compare.
-##### 9. Check the rest of with the rest of the tools - ApateDNS, the two cmds, which provide **Network-Based Indicators**
+   
+   !!! tip "Must take note!"
+
+       * Under the Files added, any `.pf` files are prefix files, not a file created by the malware
+       * Under Values Added, look out for registry changes to CurrentVersion/Run - malware is inserting itself to the folder of processes to run when a computer boots/starts up
+       * Under Values Modified, stay away from those that say 'Cryptography' - these are quite normal changes 
+       * Under Values Modified, also check for Services that the malware may have
+
+##### 9. Check the rest of with the rest of the tools - ApateDNS, the two cmds <sub><sup>(for garbage text-> usually encrypted)</sub></sup> , which provide **Network-Based Indicators**, which are indicators of compromise.
 ##### 10. Check on Process Explorer
+There are 3 things you can do in process explorer that can make huge differences to your final inference of the malware's functionality.
+   1. See `.dlls` functionality <sub><sup>(a huge cheat for those unsure of .dlls functionalities 🤩)</sub><sup>
+   ![Finding out .dll's functionality](https://user-images.githubusercontent.com/103948042/200862646-b48de322-a0f0-4299-baa6-38b760a12073.gif)
+
+   2. Observe Strings in image and memory 
+   ![prop_full](https://user-images.githubusercontent.com/103948042/200864220-9fe6b337-0e48-4f1b-abe3-0f698f6bbff3.gif)
+   If there are any extra strings in memory, it would hint that the malware is a packed malware as there when the PE is run, it is unpacked and executed. As such the additional strings in memory only show that the PE was previously packed.
+
+   !!! tip "Dr Divyan's protip"
+
+       * Ensure what you have found in Dynamic Analysis matches strings/information found in Static Analysis.
+       * (Take this with a grain of salt), if you press on the 'Verify' button, it will help to check whether the PE is legitimate or not.
+   
+   3. Look for Mutext (under Mutant type)
+   ![mutext](https://user-images.githubusercontent.com/103948042/200864631-8b736767-d902-4f8d-bb19-1eba0a7e897f.gif)
+   
+##### 11. Check on Process Monitor
 
 ## Tools that may/may not be used during both analysis
 
