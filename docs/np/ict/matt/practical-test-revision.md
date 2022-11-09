@@ -37,7 +37,7 @@ Some examples of common compilers are :
 
 !!! note "Space where the compiler is suppoed to be is empty?"
 
-      *  You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
+    *  You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
 
 2. Press the arrow to the right of 'EP Section'. A popup as seen below should appear.
 
