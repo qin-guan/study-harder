@@ -23,14 +23,15 @@
     * The following is a suggested method to perform analysis, however, do use the tools as and when you feel like it is required.
 
 ### 1. Open PEview to find out when the PE is compiled
+
 Location to check compilation date and time stamp is (IMAGE_NT_HEADERS -> IMAGE_FILE_HEADER)
 
 ### 2. Open PEID and analyse the results - is it packed or unpacked?
 
 To find out whether it is packed or not, there are **two** main ways:
 
-1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE. 
-   
+1. Look at the line above the 'Multi Scan' option. This will show the compiler used to compile the PE.
+
 !!! tip "How to tell if PE is packed or not?"
 
     * Recognisable Programming Language - malware is **not** packed (eg. Microsoft Visual Studio C++)
