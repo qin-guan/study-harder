@@ -1,7 +1,7 @@
 site_name: Study Harder
 site_url: https://study-harder.pages.dev/
 site_author: Qin Guan
-copyright: Copyright &copy; Qin Guan <a href="https://github.com/qin-guan/study-harder/blob/main/LICENSE">CC BY-NC-SA 4.0</a>
+copyright: Copyright &copy; Qin Guan and contributors <a href="https://github.com/qin-guan/study-harder/blob/main/LICENSE">CC BY-NC-SA 4.0</a>
 
 repo_url: https://github.com/qin-guan/study-harder
 repo_name: qin-guan/study-harder
@@ -34,7 +34,6 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-
 extra_javascript:
   - javascripts/mathjax.js
   - javascripts/tablesort.js
@@ -49,7 +48,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: !ENV [ CI, false ]
+      enabled: !ENV [CI, false]
 
 theme:
   name: material
