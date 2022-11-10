@@ -20,7 +20,7 @@
 
 !!! warning "Warning!"
 
-    * The following is a suggested method to perform analysis, however, do use the tools as and when you feel like it it required.
+    * The following is a suggested method to perform analysis, however, do use the tools as and when you feel like it is required.
 
 ### 1. Open PEview to find out when the PE is compiled
 Location to check compilation date and time stamp is (IMAGE_NT_HEADERS -> IMAGE_FILE_HEADER)
@@ -39,7 +39,7 @@ To find out whether it is packed or not, there are **two** main ways:
 !!! note "Space where the compiler is supposed to be is empty?"
 
     * You can press the right arrow (->) at the bottom right of PEiD and perform a <b>Normal Scan</b> , <b>Deep Scan</b> and <b>Hardcore Scan</b>. The compiler should show.
-    * If still no signature detected, see imports and strings. Packed malware usually have very little imports and more gibberish strings
+    * If still no signature detected, see imports and strings.(Dependency Walker and BinText) Packed malware usually have very little imports and more gibberish strings
 
 
 2. Press the arrow to the right of 'EP Section'. A popup as seen below should appear.
