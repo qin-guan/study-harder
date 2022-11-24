@@ -4,19 +4,27 @@
 
     Content on this page is written by Farrell and copied here for reference.
 
-🚨The usage of R stands for relations, and not the set of real numbers in this chapter.
+!!! warning
+
+    The usage of R stands for relations, and not the set of real numbers in this chapter.
 
 ## Relations on a set
 
 A relation on a set A is a relation, from A to A.
 
-The relation of a set ⊆ A x A. [Refer back to Product sets in Week 4 Set Theory if unsure]
+The relation of a $set \subseteq A \times A$. 
 
-Lets say if A = {2,6,7}
+!!! tip
 
-R being a relation of set A: R = {(a,b)|a is a divisor of b}
+    Refer back to Product sets in Week 4 Set Theory if unsure
 
-R = {(2,2),(2,6))(6,6),(7,7)}
+Lets say if
+
+$$A = \{2,6,7\}$$
+
+R being a relation of $set A: R = {(a,b) | a \ is \ a \ divisor \ of \ b}$
+
+$$R = {(2,2),(2,6))(6,6),(7,7)}$$
 
 ## Binary Relations
 
