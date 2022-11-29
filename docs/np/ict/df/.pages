@@ -2,7 +2,8 @@ title: Digital Forensics
 nav:
 - 1-computer-forensics.md
 - 1-digital-evidence.md
-- 1-summary.md
 - 2-investigative-process.md
 - 3-evidence-extraction-n-analysis.md
-- ...
+- 4-windows-artifacts.md
+- 5-windows-file-system.md
+- 6-ntfs-analysis.md

@@ -1,5 +1,8 @@
 # Evidence Extraction & Analysis
 
+!!! warning "Work in Progress"
+    Site still Work In Progress. Expect A Major Overhaul Soon.
+
 ## Slack Space
 
 !!! important
@@ -12,7 +15,7 @@
   - Assume that the OS uses a 4k cluster and 512 byte sector. This means that if a 2000 byte file were written to this cluster the remaining 2096 bytes would be slack
 ![](3-evidence-extraction-n-analysis-images/3-slack-space-example.png)
 
-## Hard Drisk Drive (Optional)
+## Hard Disk Drive (Optional)
 - Main Storage Media for most computer systems
 - Holds:
   - Boot files
