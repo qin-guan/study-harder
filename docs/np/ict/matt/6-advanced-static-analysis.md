@@ -16,6 +16,8 @@ A stack frame consists of the `ESP` and the `EBP`:
 
     Count pushes before the function call.
 
+    This is also the number of arguments passed to the function
+
 ## Recognizing main method
 
 Main method is the entry point of a program.
