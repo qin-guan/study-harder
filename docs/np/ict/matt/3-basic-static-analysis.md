@@ -52,6 +52,7 @@ PEs are the most common file format for executables and object code. It is a sta
 The process of getting to a PE is as follows:
 
 1. Source file (`.c`)
+   1. Compiler translates source codes into object modules
 2. Object module (`.obj`)
    1. Linker combines various object module
 3. Executable file (`.exe`)
@@ -71,11 +72,11 @@ flowchart LR
 
 #### Absolute Loading
 
-Absolute Loading loads a program at a fixed location **every time**
+Absolute Loading loads a program at a fixed location **every time** 
 
 !!! tip
 
-    This is avoided nowadays to prevent applications from knowing which memory location they will always use.
+    This is avoided nowadays to prevent applications from knowing which memory location they will always use. Prone to injection attacks.
 
 #### Relocatable Loading
 
@@ -87,7 +88,7 @@ Dynamic Run-Time Loading loads a program at a **random** location **every time**
 
 ### Address binding
 
-TODO: Add more info
+A scheme that binds instructions that use addresses in a program to a proper space in main memory. Can be thought as a mapping from one address space to another, binding a symbolic name/label to an actual address. Binding can be specified in the program, or resolved at compile,link,load or run time.
 
 ### Linking
 
@@ -97,11 +98,13 @@ Linking is the process of combining object files into an executable file. The li
 
 Static linking combines all executable code from libraries into an executable.
 
-However, this makes the executable very big.
+However, this makes the executable very big, and difficult to differentiate which codes belongs to the executable, or to the statistically linked codes from the libraries.
 
 #### Dynamic linking
 
 Dynamic linking combines only the references to the libraries into the executable. The executable will then **search and load** the libraries during runtime.
+
+The address of the library function to connect to is resolved at runtime too. 
 
 ### Sections
 
@@ -125,9 +128,15 @@ Readonly data
 
 #### `.edata`
 
+Export Data Section, contains the export directory for the `.exe`. Provides export table to specify ordinal values and function names
+
 #### `.resrc`
 
 Resources such as images / icons, this section is organized like a file system.
+
+#### `.debug`
+
+Debug Information
 
 ## Addresses
 
@@ -137,7 +146,7 @@ Addresses are referenced relative to the base address of the program. The base a
 
 !!! tip
 
-    Information for address resolution is stored in `.idata` section
+    Information for address resolution is stored in `.idata` section (import section)
 
 ## Packed malwares
 
