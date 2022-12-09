@@ -38,3 +38,4 @@ Out of syllabus, but hey its kinda interesting y'know :)
 4. Basic Dynamic Analysis
 5. Practical Test Revision 
 6. Assembly
+7. Advanced Static Analysis
