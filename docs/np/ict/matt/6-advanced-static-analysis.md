@@ -67,6 +67,8 @@ Epilogue is the code that is executed after the function is called.
 
 ```asm
 pop ebp # (1)!
+retn # (2)!
 ```
 
 1. Move top of stack to `EBP`
+2. Return to main function
