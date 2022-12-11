@@ -35,7 +35,7 @@ Out of syllabus, but hey its kinda interesting y'know :)
 1. Introduction to Malware
 2. Windows Malware
 3. Basic Static Analysis
-4. Basic Dynamic Analysis
+4. Basic Dynamic Analysis [rather empty, skip to next one first]
 5. Practical Test Revision 
 6. Assembly
-7. Advanced Static Analysis
+7. Advanced Static Analysis [rather empty, refer to above]
