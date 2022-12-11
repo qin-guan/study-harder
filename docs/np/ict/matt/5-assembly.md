@@ -112,3 +112,34 @@ e.g. `[ecx]`
 
 `EIP` is 32 bits. It stores the address of **next** instruction to execute. When you control `EIP`, you can control what is executed by the CPU. If attackers have maliicous code/malware in memory, then they simply can modify `EIP` to point to that code to exploit a system.
 
+## Data Allocation
+
+![Directives](https://user-images.githubusercontent.com/103948042/206883536-5e6e26cd-30bb-4c39-bdf9-2171522ca2a0.png)
+![Reference](https://user-images.githubusercontent.com/103948042/206883813-92fa7d9f-3d77-43e7-8388-1520d302bfa0.png)
+
+!!! tip
+
+    Anything that follows a ';' is a comment and is ignored by the assembler
+
+Multiple definitions can also be abbreviated.
+![Abbreviated](https://user-images.githubusercontent.com/103948042/206883585-ab1ff786-662a-45fc-8c81-5bac1e492e61.png)
+
+References to certain values stored goes like this:
+![Referencing](https://user-images.githubusercontent.com/103948042/206883704-4342d4c8-58ea-4f39-9cf6-e5dbdb083a92.png)
+When Z above is called, he value returned would then be 1, while Z + 4 will be 2.
+
+### `DUP`
+`DUP` initializes an array of specifiec integers/bytes.
+
+(e.g. `10 DUP (0)` initializes an array of 10 elements, all initalized to 0. The result of this would be like this: 0,0,0,0,0,0,0,0,0,0)
+
+### `EQU`
+`EQU` assigns the result of expression to name. The expression is evalutaed at assembly time.
+(e.g. The expression 50, is assigned to the name NUM_OF_ROWS below)
+ ![Example of EQU](https://user-images.githubusercontent.com/103948042/206883772-8b942add-8b62-44db-b649-456f077257c0.png)
+
+### Correspondenc to C data types
+![C data types](https://user-images.githubusercontent.com/103948042/206883790-ba1a8bac-5b6c-4780-b636-eaf83b816952.png)
+
+## Program Layout
+![Program Layout](https://user-images.githubusercontent.com/103948042/206883833-160aac3a-1751-4787-bfa0-28963a45925c.png)
