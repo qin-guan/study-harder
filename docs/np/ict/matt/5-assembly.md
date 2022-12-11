@@ -248,4 +248,18 @@ Copies value at location pointed to by the stack pointer into a register or vari
 !!! warning
 
     Pop can only be done on 16/32 bits register/memory addresses. 
- 
+
+## Basic constructs
+### Recognizing the main method
+![image](https://user-images.githubusercontent.com/103948042/206888283-e9dd0554-b7bc-454d-b5ae-deb7b878692e.png)
+#### Example
+![image](https://user-images.githubusercontent.com/103948042/206888287-26d65020-9037-4a81-8ef0-88b95a6d8567.png)
+
+### If Else
+![image](https://user-images.githubusercontent.com/103948042/206888315-0b082abe-ad7e-4262-b63b-aa1a5bf21d0b.png)
+
+### Loops
+![image](https://user-images.githubusercontent.com/103948042/206888320-810ff1cd-cd2d-4480-a70d-781df4dc4aac.png)
+
+
+
