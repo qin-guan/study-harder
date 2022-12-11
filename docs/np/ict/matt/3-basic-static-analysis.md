@@ -64,10 +64,16 @@ flowchart LR
     pe[Executable PE] --> Loader --> rp[Running Program]
 ```
 ### File Format
+Starts with DOS Header ("MZ" - 4D 5A), offset to PE Header. Followed by PE Header,Section Table and Sections itself.
 
 #### PE Header
-Includes
+1. Machine Type
+2. Number of Sections
+3. Timestamp
+4. Data Directory (table of where in the image the sections are stored )
 
+#### Section Table
+List of Sections
 
 #### Sections
 
@@ -75,7 +81,7 @@ The linker combines text and data from various object modules (`.obj`) to form t
 
 !!! tip
 
-    Compilers can append `$...` to the end of the names to dictate the ordering within a section
+    Compilers can append `$...` to the end of the names to dictate the ordering within a section. For example “.text$X” is before “.text$Y” in the .text section
 
 ##### `.text`
 
@@ -157,9 +163,15 @@ The address of the library function to connect to is resolved at runtime too.
 
 Addresses are referenced relative to the base address of the program. The base address is the address of the first byte of the program.
 
+![image](https://user-images.githubusercontent.com/103948042/206901927-dc262b16-64f3-4c95-b25f-d8b8f6c70586.png)
+
+
 !!! tip
 
     Information for address resolution is stored in `.idata` section (import section)
+
+### Relative Virtual Address
+A virtual address that is relative to the base address of the exectuable program.
 
 ## Packed malwares
 
@@ -177,10 +189,14 @@ The program would then be unpacked when it is executed. This is done by the unpa
 
     * Raw size > virtual size.
 
-In a packed executable, there is a "Wrapper Program" that decrypts the inner packed malware. This wrapper program is for decompression/decryption the packed malware before loading to memoryTherefore in static analysis, only the wrapper program is analyzed.
+In a packed executable, there is a "Wrapper Program" that decrypts the inner packed malware. This wrapper program (or stub) is for decompression/decryption the packed malware before loading to memory.Therefore in static analysis, only the wrapper program is analyzed.
 
 ## Ordinal values
 
 The ordinal values are the numbers that are used to identify the functions in the Windows API. The ordinal values are used in the import table of the PE file.
 
 In static analysis, ordinal values are not available because the program is not running. The ordinal values are only available in dynamic analysis.
+
+## Importing Functions
+![image](https://user-images.githubusercontent.com/103948042/206902094-1e4c6b54-a001-4fba-b4b6-50f5bad2aee2.png)
+![image](https://user-images.githubusercontent.com/103948042/206902096-53a13d8f-e1e8-4aa0-ad54-ebd8f0fc5403.png)
