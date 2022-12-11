@@ -35,7 +35,7 @@ A string is a sequence of characters terminated with a NULL (0x00) character. It
 
 !!! tip
 
-    *BinText* can also be used to view strings in malware
+    *BinText* can also be used to view strings in malware. Types of strings to look out for are ACII (1 byte per character) and Unicode (2 byte per character). 
   
 ## Portable Executable (PE)
 
@@ -63,6 +63,51 @@ flowchart LR
 flowchart LR
     pe[Executable PE] --> Loader --> rp[Running Program]
 ```
+### File Format
+
+#### PE Header
+Includes
+
+
+#### Sections
+
+The linker combines text and data from various object modules (`.obj`) to form the executable.
+
+!!! tip
+
+    Compilers can append `$...` to the end of the names to dictate the ordering within a section
+
+##### `.text`
+
+Executable code
+
+##### `.data`
+
+Read/write initialized data
+
+##### `.rdata`
+
+Readonly data
+
+##### `.edata`
+
+Export Data Section, contains the export directory for the `.exe`. Export table specifies ordinal values and function names. 
+
+![image](https://user-images.githubusercontent.com/103948042/206900541-571a897e-0317-4dfb-9d9d-1bb9aeca2665.png)
+
+##### `.resrc`
+
+Resources such as images / icons, this section is organized like a file system.
+
+##### `.debug`
+
+Debug Information
+
+##### `.reloc`
+Specifies location of where the module is moved to
+###### Base Relocation
+![image](https://user-images.githubusercontent.com/103948042/206900572-39383166-41ad-4fb8-b8a5-8fc2f6e7719e.png)
+
 
 ### Loading a PE
 
@@ -86,6 +131,8 @@ Dynamic Run-Time Loading loads a program at a **random** location **every time**
 
 A scheme that binds instructions that use addresses in a program to a proper space in main memory. Can be thought as a mapping from one address space to another, binding a symbolic name/label to an actual address. Binding can be specified in the program, or resolved at compile,link,load or run time.
 
+A prgoram to be executed must be brought to main memory before execution. The instructions that use addresses in the program are then bind to a proper address space in main memory.
+
 ### Linking
 
 Linking is the process of combining object files into an executable file. The linker combines the object files and resolves any references between them.
@@ -98,41 +145,11 @@ However, this makes the executable very big, and difficult to differentiate whic
 
 #### Dynamic linking
 
-Dynamic linking combines only the references to the libraries into the executable. The executable will then **search and load** the libraries during runtime.
+Dynamic linking combines only the references to the libraries into the executable. The executable will then **search and load** the correct libraries during runtime.
 
 The address of the library function to connect to is resolved at runtime too. 
 
-### Sections
 
-The linker combines text and data from various object modules (`.obj`) to form the executable.
-
-!!! tip
-
-    Compilers can append `$...` to the end of the names to dictate the ordering within a section
-
-#### `.text`
-
-Executable code
-
-#### `.data`
-
-Read/write initialized data
-
-#### `.rdata`
-
-Readonly data
-
-#### `.edata`
-
-Export Data Section, contains the export directory for the `.exe`. Provides export table to specify ordinal values and function names
-
-#### `.resrc`
-
-Resources such as images / icons, this section is organized like a file system.
-
-#### `.debug`
-
-Debug Information
 
 ## Addresses
 
@@ -146,9 +163,13 @@ Addresses are referenced relative to the base address of the program. The base a
 
 ## Packed malwares
 
-A malicious actor would like to add as many roadblocks to the investigation as possible. One way to achieve this is using a packer.
+A malicious actor would like to add as many roadblocks to the investigation as possible.(To hide malware functionality) One way to achieve this is using a packer.
 
-A packer is a program that takes a malicious program and adds a layer of obfuscation (i.e. encryption) to it. This makes it harder to analyze the program and to detect it.
+A packer is a program that takes a malicious program and adds a layer of obfuscation (i.e. encryption/encryption) to it. This makes it harder to analyze the program and to detect it. 
+
+!!! tip 
+
+    An `.exe` is not readable when encrypted.
 
 The program would then be unpacked when it is executed. This is done by the unpacker. The unpacker is a program that decrypts the malicious program.
 
@@ -156,9 +177,7 @@ The program would then be unpacked when it is executed. This is done by the unpa
 
     * Raw size > virtual size.
 
-Encryption / compression is used to obfuscate the malware.
-
-In a packed executable, there is a "Wrapper Program" that decrypts the inner packed malware. Therefore in static analysis, only the wrapper program is analyzed.
+In a packed executable, there is a "Wrapper Program" that decrypts the inner packed malware. This wrapper program is for decompression/decryption the packed malware before loading to memoryTherefore in static analysis, only the wrapper program is analyzed.
 
 ## Ordinal values
 
