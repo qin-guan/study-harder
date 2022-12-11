@@ -143,3 +143,32 @@ When Z above is called, he value returned would then be 1, while Z + 4 will be 2
 
 ## Program Layout
 ![Program Layout](https://user-images.githubusercontent.com/103948042/206883833-160aac3a-1751-4787-bfa0-28963a45925c.png)
+
+### Assembly Instructions
+
+## Move , `mov` 
+Copies a value specified or the value stored at a specified address into the destination.
+![Move instructions](https://user-images.githubusercontent.com/103948042/206885495-6ad518e0-ef25-4d2a-9186-03c11c37643d.png)
+
+## Load Effective Address , `lea`
+Copies value of address into the destination
+![LEA instructions](https://user-images.githubusercontent.com/103948042/206885562-47f53b88-73ee-479e-aea2-136897fef66f.png)
+
+## Arithmetic Instructions
+![Assembly Math P1](https://user-images.githubusercontent.com/103948042/206885628-6aaf5464-b0ba-4bc4-94fa-0f0712588874.png)
+![Assembly Math P2](https://user-images.githubusercontent.com/103948042/206885645-4bd5192f-4828-47e1-b917-8d72bccdcac1.png)
+
+## Logical/Shifting Instructions
+![Logical and Shifting Instructions](https://user-images.githubusercontent.com/103948042/206885656-d9092af9-04bc-4ba4-909e-d9cc614a48a7.png)
+Each Logical and Shifting Instructions have their purposes. Generally, they are :
+
+| Instruction      | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| `xor`        | Used to clears registers, and specify which bits to change                      |
+| `or`         | Used to set a certain bit                                                       |
+| `sh`(shift)  | Used for fast multiplication                                                    |
+| `ro`(rotate) | Used for fast division                                                          |
+
+## NOP and INT
+![NOP and INT](https://user-images.githubusercontent.com/103948042/206885785-9c9b207c-1021-4203-81aa-9c6600ab149d.png)
+
