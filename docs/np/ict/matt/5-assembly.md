@@ -41,7 +41,7 @@ Memory can be split into different parts, namely Stack, Heap, Code and Data. The
 
 ### Stack
 
-The stack is a region of memory that is used to store temporary data. Used to control program flow as function, APIs and subroutines are called here. 
+The stack is a region of memory that is used to store temporary data(local variables and parameters for functions). Used to control program flow as function, APIs and subroutines are called here. 
 
 !!! tip
 
@@ -49,7 +49,7 @@ The stack is a region of memory that is used to store temporary data. Used to co
 
 ### Heap
 
-The heap is a region of memory that is used to store data that is allocated dynamically (Allocates new values and free unwanted values during execution or run time). 
+The heap is a region of memory that is used to store data that is allocated dynamically (Content change freqently when program is running, also meaning that it constantly allocates new values and free unwanted values during execution or run time). 
 
 ### Code
 
@@ -252,6 +252,8 @@ Copies value at location pointed to by the stack pointer into a register or vari
 ## Basic constructs
 ### Recognizing the main method
 ![image](https://user-images.githubusercontent.com/103948042/206888283-e9dd0554-b7bc-454d-b5ae-deb7b878692e.png)
+![image](https://user-images.githubusercontent.com/103948042/206901475-cf83e41f-6812-4f20-bc29-993115a5733a.png)
+
 #### Example
 ![image](https://user-images.githubusercontent.com/103948042/206888287-26d65020-9037-4a81-8ef0-88b95a6d8567.png)
 
@@ -276,3 +278,6 @@ A complex data type declaration that defines a physically grouped list of vari
 Or simply a collection of variables (can be of different data types) under a single name.
 ![image](https://user-images.githubusercontent.com/103948042/206892137-d09369a7-8e31-4bfc-a663-744b51d8634d.png)
 Structures are accessed with base address.
+
+## Stack Frame
+![image](https://user-images.githubusercontent.com/103948042/206901357-8be6eb6e-840f-4e0f-8b0a-a13bc2a11631.png)
