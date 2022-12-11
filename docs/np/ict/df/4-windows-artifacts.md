@@ -15,19 +15,202 @@
 
 ## Important Folders/Files
 
-| Folder/Files                                                                                   | Subfolders/files                                                                                      | Path                                                                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                                                                         |
-|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Root                                                                                           | Application Data <br/> Cookies <br/> Desktop <br/> Favorites <br/> Etc.<br/> [NTUSER.DAT](#ntuserdat) |                                                                                                                                                                                                      | Named after the user's login name                                                                                                                                                                                                                                                                                                                   |
-| Windows 2000/XP <br/> ==Recycler== <br/><br/> Windows Vista/7/8/10/11 <br/> ==`$Recycle.bin`== | Windows Vista/7/8/10 <br/> `$I<number>.<original extension>` <br/> `$R<number>.<original extension>`  | `C:\Users\%UserName%\$RECYCLE.BIN\<SID>`                                                                                                                                                             | Files deleted will be sent to the Recycle Bin <br/><br/> Windows 2000/XP <br/> The deleted files are stored in a hidden file called [INFO2]("Contains original file name and path, date and time of deletion") <br/><br/> Windows Vista/7/8/10 <br/> Individual index files begin with `$I` <br/> Deleted file name is renamed and begins with `$R` |
-| Low Folders                                                                                    | Cookies <br/> Temporary Internet Files <br/> History                                                  |                                                                                                                                                                                                      | Microsoft uses it to ==protect system== against malware <br/> Data placed in these folders runs with ==least privilege== <br/> ==Examiners== must access both the ==normal== and ==low== folders to have a complete investigation                                                                                                                   |
-| Cookies Folder                                                                                 | user_name@domain_name.txt <br/> index.dat                                                             |                                                                                                                                                                                                      | Created by websites and placed on user's computer.<br/> Each cookie is contained in 1 file. [Find Out More](#cookies)                                                                                                                                                                                                                               |
-| Temporary Internet Files (TIF)                                                                 |                                                                                                       | Earlier Windows OS <br/> `C:\Users\%UserName%\AppData\Local\Microsoft\Windows\Temporary Internet Files\` <br/><br/> Windows 10 <br/> `C:\Users\%UserName%\AppData\Local\Microsoft\Windows\INetCache` | Mainly for ==Internet Explorer== <br/> Store files that are ==downloaded== and ==cached== <br/> Track user's web browsing ==history== which includes ==web mail== such as Gmail                                                                                                                                                                     |
-| Email Folder                                                                                   |                                                                                                       | Windows 10 <br/> `C:\Users\%UserName%\AppData\Local\Comms\Unistore\data\` <br/><br/> Windows 11 <br/> `C:\Users\%UserName%\AppData\Local\Microsoft\Windows Mail`                                     |                                                                                                                                                                                                                                                                                                                                                     |
-| Recent Folder                                                                                  |                                                                                                       | `C:\Users\%UserName%\AppData\Roaming\Microsoft\Windows\Recent`                                                                                                                                       | Contains ==links files== that links to ==recently== accessed files, folders and application                                                                                                                                                                                                                                                         |
-| My Documents                                                                                   |                                                                                                       | `C:\Users\%UserName%\Documents`                                                                                                                                                                      | Default location to store user-generated data                                                                                                                                                                                                                                                                                                       |
-| Sent To Folder                                                                                 |                                                                                                       | `C:\Users\%UserName%\AppData\Roaming\Microsoft\Windows\SendTo`                                                                                                                                       | When user right-click an object, and choose Send To, the options are contained in this file. [Find Out More](#send-to-folder)                                                                                                                                                                                                                       |
-| Temp Folder                                                                                    |                                                                                                       | `C:\Users\%UserName%\AppData\Local\Temp`                                                                                                                                                             | Contains ==created by Windows== while programs are ==running== and different processes are taking place <br/> Usually are an exact match of files/file that is ==stored elsewhere== in the computer or they are an exact duplicate that are waiting to be ==processed==                                                                             |
-| Desktop Folder                                                                                 |                                                                                                       | `C:\Users\%UserName%\Desktop`                                                                                                                                                                        | Contains ==items and applications== that are ==intentionally placed== by the user or ==generated== during installation <br/> All User Desktop Folder must be also ==evaluated== as any items present can appear on the Desktop of a specific user                                                                                                   |
+<table>
+<thead>
+  <tr>
+    <th>Folder/Files</th>
+    <th>Subfolders/files</th>
+    <th>Path</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Root</td>
+    <td>
+        <ul>
+            <li>Application Data</li>
+            <li>Cookies</li>
+            <li>Desktop</li>
+            <li>Favorites</li>
+            <li>Etc.</li>
+            <li><a href="#ntuserdat">NTUSER.DAT</a></li>
+        </ul>
+    </td>
+    <td></td>
+    <td>
+        <ul>
+            <li>Named after the user's login name</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Windows 2000/XP <br/> <mark>Recycler</mark> <br/><br/> Windows Vista/7/8/10/11 <br/> <code>$Recycle.bin</code></td>
+    <td>
+        <ul>
+            <li>Windows Vista/7/8/10</li>
+            <ul>
+                <li>
+                  <code>$I&lt;number&gt;.&lt;original extension&gt;</code>
+                </li>
+                <li>
+                <code>$R&lt;number&gt;.&lt;original extension&gt;</code>
+                </li>
+            </ul>
+        </ul>
+    </td>
+    <td>
+        <code>C:\Users\%UserName%\$RECYCLE.BIN\&lt;SID&gt;</code>
+    </td>
+    <td>
+        <ul>
+            <li>Files deleted will be sent to the Recycle Bin</li>
+        </ul>
+        Windows 2000/XP
+        <ul>
+            <li> The deleted files are stored in a hidden file called <a href="" title="Contains original file name and path, date and time of deletion">INFO2</a></li>
+        </ul>
+        Windows Vista/7/8/10
+        <ul>
+            <li>Individual index files begin with <code>$I</code></li>
+            <li>Deleted file name is renamed and begins with <code>$R</code></li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Low Folders</td>
+    <td>
+        <ul>
+            <li>Cookies</li>
+            <li>Temporary Internet Files</li>
+            <li>History</li>
+        </ul>
+    </td>
+    <td></td>
+    <td>
+        <ul>
+            <li>Microsoft uses it to <mark>protect system</mark> against malware</li>
+            <li>Data placed in these folders runs with <mark>least privilege</mark></li>
+            <li><mark>Examiners</mark> must access both the <mark>normal</mark> and <mark>low</mark> folders to have a complete investigation</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Cookies Folder</td>
+    <td>
+        <ul>
+            <li>user_name@domain_name.txt</li>
+            <li>index.dat</li>
+        </ul>
+    </td>
+    <td></td>
+    <td>
+        <ul>
+            <li>Created by websites and placed on user's computer</li>
+            <li>Each cookie is contained in 1 file [<a href="#cookies">Find Out More</a>]</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Temporary Internet Files (TIF)</td>
+    <td></td>
+    <td>
+        Earlier Windows OS
+        <ul>
+            <li><code>C:\Users\%UserName%\AppData\Local\Microsoft\Windows\Temporary Internet Files\</code></li>
+        </ul>
+        Windows 10
+        <ul>
+            <li><code>C:\Users\%UserName%\AppData\Local\Microsoft\Windows\INetCache\</code></li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li>Mainly for <mark>Internet Explorer</mark></li>
+            <li>Store files that are <mark>downloaded</mark> and <mark>cached</mark></li>
+            <li>Track user's web browsing <mark>history</mark> which includes <mark>web mail</mark> such as Gmail</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Email Folder</td>
+    <td></td>
+    <td>
+        Windows 10
+        <ul>
+            <li><code>C:\Users\%UserName%\AppData\Local\Comms\Unistore\data\</code></li>
+        </ul>
+        Windows 11
+        <ul>
+            <li><code>C:\Users\%UserName%\AppData\Local\Microsoft\Windows Mail</code></li>
+        </ul>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Recent Folder</td>
+    <td></td>
+    <td>
+        <code>C:\Users\%UserName%\AppData\Roaming\Microsoft\Windows\Recent</code>
+    </td>
+    <td>
+        <ul>
+            <li>Contains <mark>links files</mark> that links to <mark>recently</mark> accessed files, folders and application</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>My Documents</td>
+    <td></td>
+    <td>
+        <code>C:\Users\%UserName%\Documents</code>
+    </td>
+    <td>
+        <ul>
+            <li>Default location to store user-generated data</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Sent To Folder </td>
+    <td></td>
+    <td>
+        <code>C:\Users\%UserName%\AppData\Roaming\Microsoft\Windows\SendTo</code>
+    </td>
+    <td>
+        <ul>
+            <li>When user right-click an object, and choose Send To, the options are contained in this file [<a href="#send-to-folder">Find Out More</a>]</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Temp Folder</td>
+    <td></td>
+    <td>
+        <code>C:\Users\%UserName%\AppData\Local\Temp</code>
+    </td>
+    <td>
+        <ul>
+            <li>Contains <mark>created by Windows</mark> while programs are <mark>running</mark> and different processes are taking place</li>
+            <li>Usually are an exact match of files/file that is <mark>stored elsewhere</mark> in the computer or they are an exact duplicate that are waiting to be <mark>processed</mark></li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Desktop Folder</td>
+    <td></td>
+    <td>
+        <code>C:\Users\%UserName%\Desktop</code>
+    </td>
+    <td>
+        <ul>
+            <li>Contains <mark>items and applications</mark> that are <mark>intentionally placed</mark> by the user or <mark>generated</mark> during installation</li>
+            <li>All User Desktop Folder must be also <mark>evaluated</mark> as any items present can appear on the Desktop of a specific user</li>
+        </ul>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 ### NTUSER.DAT
  - Every user profile has an NTUSER.DAT file
