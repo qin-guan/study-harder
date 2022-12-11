@@ -144,31 +144,88 @@ When Z above is called, he value returned would then be 1, while Z + 4 will be 2
 ## Program Layout
 ![Program Layout](https://user-images.githubusercontent.com/103948042/206883833-160aac3a-1751-4787-bfa0-28963a45925c.png)
 
-### Assembly Instructions
+## Assembly Instructions
 
-## Move , `mov` 
+### Move , `mov` 
 Copies a value specified or the value stored at a specified address into the destination.
 ![Move instructions](https://user-images.githubusercontent.com/103948042/206885495-6ad518e0-ef25-4d2a-9186-03c11c37643d.png)
 
-## Load Effective Address , `lea`
+### Load Effective Address , `lea`
 Copies value of address into the destination
 ![LEA instructions](https://user-images.githubusercontent.com/103948042/206885562-47f53b88-73ee-479e-aea2-136897fef66f.png)
 
-## Arithmetic Instructions
+### Arithmetic Instructions
 ![Assembly Math P1](https://user-images.githubusercontent.com/103948042/206885628-6aaf5464-b0ba-4bc4-94fa-0f0712588874.png)
 ![Assembly Math P2](https://user-images.githubusercontent.com/103948042/206885645-4bd5192f-4828-47e1-b917-8d72bccdcac1.png)
 
-## Logical/Shifting Instructions
+### Logical/Shifting Instructions
 ![Logical and Shifting Instructions](https://user-images.githubusercontent.com/103948042/206885656-d9092af9-04bc-4ba4-909e-d9cc614a48a7.png)
 Each Logical and Shifting Instructions have their purposes. Generally, they are :
 
 | Instruction      | Description                                                                 |
 | ---------------- | --------------------------------------------------------------------------- |
-| `xor`        | Used to clears registers, and specify which bits to change                      |
-| `or`         | Used to set a certain bit                                                       |
-| `sh`(shift)  | Used for fast multiplication                                                    |
-| `ro`(rotate) | Used for fast division                                                          |
+| `xor`         | Used to clears registers, and specify which bits to change                      |
+| `or`          | Used to set a certain bit                                                       |
+| `sh` (shift)  | Used for fast multiplication                                                    |
+| `ro` (rotate) | Used for fast division                                                          |
 
-## NOP and INT
+### NOP and INT
 ![NOP and INT](https://user-images.githubusercontent.com/103948042/206885785-9c9b207c-1021-4203-81aa-9c6600ab149d.png)
+
+## Conditionals
+Program execution depends on comparison result (Changes in status flags - specific bits may be set or cleared). The following are instructions that affect status flags. 
+
+### `AND`
+![AND](https://user-images.githubusercontent.com/103948042/206886276-6be54343-ff0f-4418-b752-a21bf057a5c6.png)
+
+### `OR`
+![OR](https://user-images.githubusercontent.com/103948042/206886288-f97bb9ca-ebc0-4ae6-a062-4ecedc096df1.png)
+
+### `XOR`
+![XOR](https://user-images.githubusercontent.com/103948042/206886294-338eee80-cc6e-4f36-b37a-5c0d555065f8.png)
+
+### `NOT`
+![NOT](https://user-images.githubusercontent.com/103948042/206886304-f1a44d67-d703-45ba-8808-abb4b8a37a70.png)
+
+### `test`
+Performs a nondestructive AND operation between each pair of matching bits in two operands.**Only affects the ZF.**
+
+### `cmp`
+Compares destination and source.
+!!! tip
+
+    You can imagine it as a CMP result: Destination - Source
+ 
+#### `cmp` with unsigned integers
+![image](https://user-images.githubusercontent.com/103948042/206886417-d9ab5857-d7b5-43e1-af6f-2190c80827fd.png)
+![image](https://user-images.githubusercontent.com/103948042/206886422-b58ba680-f8ad-4d52-9038-2886c342279e.png)
+
+#### `cmp` with signed integers
+![image](https://user-images.githubusercontent.com/103948042/206886426-def73bb0-b6db-49ce-b06f-ffa91b64ab62.png)
+
+### Conditional Jumps
+Branches to a label when specific register/flag conditions are met. Based on specific flags, equality, unsigned/signed comparisions.
+![image](https://user-images.githubusercontent.com/103948042/206886451-aadeba6a-33d4-451c-9533-3c1535e96ddf.png)
+![image](https://user-images.githubusercontent.com/103948042/206886456-679b2076-6264-4803-8919-6d6c29483b33.png)
+![image](https://user-images.githubusercontent.com/103948042/206886459-7998ae85-17af-46b3-a946-7d0aa3fd611d.png)
+![image](https://user-images.githubusercontent.com/103948042/206886465-54d68bcb-498b-4bc7-bc40-0c5de376feff.png)
+
+### Repeat Instructions
+Repeat instructions are used for processing multi byte data like byte arrays. Uses `ESI` (source index), `EDI`(destination index) and `ECX` (counting variable) registers. **Registers must be properly initialized for repeat instructions to work.**
+
+**`ECX` decreases once one repeat has occured.**
+
+
+| Instruction      | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| `rep`         | Based on the value stored in `ECX`, repeat for that number of times.            |
+| `repe`        | Repeat until `ECX` = 0                                                          |
+| `repz`        | Repeat until `ZF` = 0                                                           |
+| `repne`       | Repeat while `ECX` != 0                                                         |
+| `repnz`       | Repeat while `ZF` != 1                                                          |
+
+#### Examples
+![image](https://user-images.githubusercontent.com/103948042/206886762-5c2fe296-c4f7-4fb7-8811-2c50c22d374f.png)
+![image](https://user-images.githubusercontent.com/103948042/206886768-f5ed0efd-bed0-45c8-92a7-b766c91ec9b3.png)
+
 
