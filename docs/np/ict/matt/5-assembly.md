@@ -261,13 +261,18 @@ Copies value at location pointed to by the stack pointer into a register or vari
 ### Loops
 ![image](https://user-images.githubusercontent.com/103948042/206888320-810ff1cd-cd2d-4480-a70d-781df4dc4aac.png)
 
-### For Loop
+#### For Loop
 ![image](https://user-images.githubusercontent.com/103948042/206888381-e9a4a553-ac83-4037-92fb-77fbc5db13d5.png)
 
-### While Loop
+#### While Loop
 ![image](https://user-images.githubusercontent.com/103948042/206888396-eaa724da-1fed-4812-95a1-005626c86955.png)
 
 ### Switch 
 ![image](https://user-images.githubusercontent.com/103948042/206888414-7c6d1e17-ee76-4d79-bc5b-475fcb21ffa3.png)
 
 ### Struct
+A complex data type declaration that defines a physically grouped list of variables to be placed under one name in a block of memory, allowing the different variables to be accessed via a single pointer, or the struct declared name which returns the same address. 
+
+Or simply a collection of variables (can be of different data types) under a single name.
+![image](https://user-images.githubusercontent.com/103948042/206892137-d09369a7-8e31-4bfc-a663-744b51d8634d.png)
+Structures are accessed with base address.
