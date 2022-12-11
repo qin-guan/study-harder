@@ -45,7 +45,7 @@ The stack is a region of memory that is used to store temporary data. Used to co
 
 !!! tip
 
-    Functions vs Subroutines - the difference is that functions return values, while subroutines do not return values.
+    Functions vs Subroutines - the difference is that functions are used when a value is needed to be returned, while subroutines are used when a desired task is needed, but no return values are needed.
 
 ### Heap
 
