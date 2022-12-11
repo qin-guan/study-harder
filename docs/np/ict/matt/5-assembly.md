@@ -261,5 +261,13 @@ Copies value at location pointed to by the stack pointer into a register or vari
 ### Loops
 ![image](https://user-images.githubusercontent.com/103948042/206888320-810ff1cd-cd2d-4480-a70d-781df4dc4aac.png)
 
+### For Loop
+![image](https://user-images.githubusercontent.com/103948042/206888381-e9a4a553-ac83-4037-92fb-77fbc5db13d5.png)
 
+### While Loop
+![image](https://user-images.githubusercontent.com/103948042/206888396-eaa724da-1fed-4812-95a1-005626c86955.png)
 
+### Switch 
+![image](https://user-images.githubusercontent.com/103948042/206888414-7c6d1e17-ee76-4d79-bc5b-475fcb21ffa3.png)
+
+### Struct
