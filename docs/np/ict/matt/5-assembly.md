@@ -206,6 +206,10 @@ Compares destination and source.
 ### Conditional Jumps
 Branches to a label when specific register/flag conditions are met. Based on specific flags, equality, unsigned/signed comparisions.
 ![image](https://user-images.githubusercontent.com/103948042/206886451-aadeba6a-33d4-451c-9533-3c1535e96ddf.png)
+!!! tip
+
+    You Parity Flag is used for error correciton. Counts for the number of set bits(bits that are 1) and if the count is even or odd. 
+ 
 ![image](https://user-images.githubusercontent.com/103948042/206886456-679b2076-6264-4803-8919-6d6c29483b33.png)
 ![image](https://user-images.githubusercontent.com/103948042/206886459-7998ae85-17af-46b3-a946-7d0aa3fd611d.png)
 ![image](https://user-images.githubusercontent.com/103948042/206886465-54d68bcb-498b-4bc7-bc40-0c5de376feff.png)
@@ -228,4 +232,20 @@ Repeat instructions are used for processing multi byte data like byte arrays. Us
 ![image](https://user-images.githubusercontent.com/103948042/206886762-5c2fe296-c4f7-4fb7-8811-2c50c22d374f.png)
 ![image](https://user-images.githubusercontent.com/103948042/206886768-f5ed0efd-bed0-45c8-92a7-b766c91ec9b3.png)
 
+## Stack
+Stores memory for functions, local variables and flow control. The stack **grows downwards** and memory locations lower than the `esp` should **always be available, unless the stack has overflowed.**
 
+### `Push`
+Decrements the stack pointer by 4 bytes.
+Copies a value into the location pointed to by the stack pointer, `esp`.
+!!! warning
+
+    Push can only be done on 16/32 bits register/memory addresses or 32 bit immediate operands(fixed values). 
+ 
+### `Pop`
+Increments the stack pointer by either 2 or 4 bytes. (depends on attribute of the operand receiving the data - is it a DD or DQ?)
+Copies value at location pointed to by the stack pointer into a register or variable.
+!!! warning
+
+    Pop can only be done on 16/32 bits register/memory addresses. 
+ 
