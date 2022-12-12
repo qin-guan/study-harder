@@ -1,8 +1,5 @@
 # Computer Forensics
 
-!!! warning "Work in Progress"
-    Site still Work In Progress. Expect A Major Overhaul Soon.
-
 ## Background & Scope of Computer Forensics
 
 - Computers are either used as a tool to commit a crime or have become a target for these crimes

@@ -1,8 +1,5 @@
 # Digital Evidence
 
-!!! warning "Work in Progress"
-    Site still Work In Progress. Expect A Major Overhaul Soon.
-
 ## What is Digital Evidence?
 
 - Digital evidence may be found in storage devices such as:

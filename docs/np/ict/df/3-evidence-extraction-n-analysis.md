@@ -1,8 +1,5 @@
 # Evidence Extraction & Analysis
 
-!!! warning "Work in Progress"
-    Site still Work In Progress. Expect A Major Overhaul Soon.
-
 ## Slack Space
 
 !!! important
