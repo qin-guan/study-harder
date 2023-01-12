@@ -52,3 +52,10 @@ pdf-parser --object 32 --filter --raw file.pdf > out.js # Get object at 32
 ```
 
 After obtaining the obfuscated JS, run it through steps [above](#deobfuscating-browser-scripts).
+
+## Decoding Unicode
+
+```bash
+unicode2hex-escaped < input.txt > output.txt # convert any unicode into hex symbols 
+shellcode2exe -s output.txt # convert hex symbols to an executable
+```
